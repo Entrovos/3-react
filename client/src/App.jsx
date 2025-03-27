@@ -4,6 +4,7 @@ import "./App.css";
 import MainHeader from "./components/MainHeader";
 import PokemonList from "./components/PokemonList";
 import FetchData from "./components/FetchData";
+import Clock from "./components/Clock";
 
 /* class Welcome extends React.Component {
 	constructor(props) {
@@ -31,6 +32,7 @@ function App() {
 	const [name, setName] = useState("Charmander");
 	const [newPokemon, setNewPokemon] = useState("");
 	const [bgColor, setBgColor] = useState("white");
+	const [showClock, setShowClock] = useState(true);
 
 	const changeName = (e) => {
 		setName(e.target.value);
@@ -107,6 +109,17 @@ function App() {
 			<button onClick={() => setRandomBackgroundColor()}>
 				Change Background
 			</button>
+
+			<br />
+			<br />
+			<br />
+			<br />
+			<div>
+				<button onClick={() => setShowClock(!showClock)}>
+					Toggle Clock
+				</button>
+				{showClock && <Clock />}
+			</div>
 		</div>
 	);
 }
